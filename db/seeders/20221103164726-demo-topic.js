@@ -3,13 +3,13 @@ module.exports = {
   async up(queryInterface) {
     const topicData = [
       {
-        title: 'lol',
+        title: 'Мемасы',
       },
       {
-        title: 'pop',
+        title: 'Продолжи песню',
       },
       {
-        title: 'xep',
+        title: 'Elbrus за 255',
       },
     ];
     const topics = topicData.map((topic) => ({
