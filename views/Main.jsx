@@ -1,21 +1,22 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-const Main = ( { title, topics }) => {
-return (
-<Layout title={title}>
-
-    <ul className=''>
-        { topics.map((topic) => (
-        <li id={topic.id} key={topic.id}>
-            <h3>{topic.title}</h3>
-            <a href={`/cards/${topic.id}`}></a>
-        </li>
+function Main({ title, topics }) {
+  return (
+    <Layout title={title} topics={topics}>
+      <h3>All topics:</h3>
+      <div className="row row-cols-2 row-cols-md-2 g-4">
+        {topics.map((topic) => (
+          <div key={topic.id} className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">{topic.title}</h5>
+              <a href={`/cards/${topic.id}`} className="btn btn-outline-secondary">go to the hell</a>
+            </div>
+          </div>
         ))}
-    </ul>
-    {/* <h1>Hello</h1> */}
-</Layout>
-);
-};
+      </div>
+    </Layout>
+  );
+}
 
 module.exports = Main;

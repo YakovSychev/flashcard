@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const Main = require('../views/Main.jsx')
-const { Topic } = require('../db/models')
+const Main = require('../views/Main');
+const { Topic } = require('../db/models');
 
-router.get('/', async ( req, res ) => {
-const topics = await Topic.findAll({raw:true});
-res.renderComponent( Main, { topics })
-console.log(topics);
-})
+router.get('/', async (req, res) => {
+  const topics = await Topic.findAll({ raw: true });
+  res.renderComponent(Main, { topics });
+});
 
 module.exports = router;
