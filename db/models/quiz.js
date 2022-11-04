@@ -13,11 +13,39 @@ module.exports = (sequelize, DataTypes) => {
       Quiz.belongsTo(Topic, { foreignKey: 'topicId' });
     }
   }
-  Quiz.init({
-    question: DataTypes.TEXT,
-    answer: DataTypes.TEXT,
-    topicId: DataTypes.INTEGER,
-  }, {
+  const attributes = {
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    question: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    answer: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    topicId: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Topics',
+        key: 'id',
+      },
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
+  };
+  Quiz.init(attributes, {
     sequelize,
     modelName: 'Quiz',
   });

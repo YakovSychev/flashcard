@@ -5,11 +5,12 @@ module.exports = {
       {
         question: 'Что?',
         answer: 'Вот',
-        topicId: '1',
+        topicId: 1,
       },
       {
         question: 'Kak?',
-        topicId: '3',
+        answer: 'nikak',
+        topicId: 3,
       },
     ];
 
@@ -18,10 +19,10 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
     }));
-    await queryInterface.bulkInsert('Quizs', quizs);
+    await queryInterface.bulkInsert('Quizzes', quizs);
   },
 
   async down(queryInterface) {
-    await queryInterface.bulkDelete('Quizs');
+    await queryInterface.bulkDelete('Quizzes');
   },
 };
