@@ -9,7 +9,7 @@ module.exports = {
       },
       {
         question: 'Kak?',
-        answer: 'Вот',
+        answer: 'nikak',
         topicId: 3,
       },
     ];

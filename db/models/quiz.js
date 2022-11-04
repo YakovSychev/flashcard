@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       Quiz.belongsTo(Topic, { foreignKey: 'topicId' });
     }
   }
-  Quiz.init({
+
+  const attributes = {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -44,7 +45,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.DATE,
     },
-  }, {
+  };
+  Quiz.init(attributes, {
     sequelize,
     modelName: 'Quiz',
   });
