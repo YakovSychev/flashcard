@@ -5,7 +5,7 @@ const { Quiz } = require('../db/models');
 router.get('/:topic', async (req, res) => {
   const { topic } = req.params;
   const quizzes = await Quiz.findAll({ where: { topicId: topic } });
-  res.renderComponent(CardPage, { quizzes, topic });
+  res.renderComponent(CardPage, { quizzes });
 });
 
 router.post('/:topic', async (req, res) => {

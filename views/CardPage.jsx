@@ -1,11 +1,13 @@
 const React = require('react');
 const Layout = require('./Layout');
+const Navbar = require('./Navbar');
 
-function CardPage({ quizzes, topic }) {
+
+function CardPage({ quizzes }) {
   return (
     <Layout quizzes={quizzes}>
+      <Navbar />
       <div className="js-answer-f">
-
         <div className="row row-cols-2 row-cols-md-2 g-4">
           {quizzes.map((quiz) => (
             <form

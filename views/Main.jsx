@@ -1,9 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
+const Navbar = require('./Navbar');
 
 function Main({ title, topics }) {
   return (
     <Layout title={title} topics={topics}>
+      <Navbar />
       <h3>All topics:</h3>
       <div className="row row-cols-2 row-cols-md-2 g-4">
         {topics.map((topic) => (
