@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       Quiz.belongsTo(Topic, { foreignKey: 'topicId' });
     }
   }
+
   const attributes = {
     id: {
       allowNull: false,

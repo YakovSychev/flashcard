@@ -1,6 +1,6 @@
 const React = require('react');
 
-function Layout({ children }) {
+function Layout({ children, title }) {
   return (
     <html lang="en">
       <head>
@@ -18,3 +18,4 @@ function Layout({ children }) {
 }
 
 module.exports = Layout;
+
